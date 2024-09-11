@@ -39,5 +39,3 @@
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="36" height="36" alt="Java" />
 </a>
 
-## Github Status
-
