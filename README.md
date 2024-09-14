@@ -3,7 +3,7 @@
 ## ✨full-stack devaloper✨
 ![InsideoutJoyGIF](https://github.com/user-attachments/assets/910c7844-a2c0-433b-b8a3-dd7a4aa1560c)
 
- Full-Stack Developer in training and an ICT student at Bahrain Polytechnic. I’m passionate about both front-end and back-end development and eager to apply my skills to create innovative solutions. Always keen to learn and stay updated with the latest tech trends, I’m excited to tackle new challenges and contribute to impactful projects.
+ Full-Stack Developer in training and an ICT student at Bahrain Polytechnic. passionate about both front-end and back-end development and eager to apply my skills to create innovative solutions. Always keen to learn and stay updated with the latest tech trends, I’m excited to tackle new challenges and contribute to impactful projects.
 
 
 ## skills
@@ -38,6 +38,4 @@
 <a href="https://www.java.com/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="36" height="36" alt="Java" />
 </a>
-
-## Github Status
 
