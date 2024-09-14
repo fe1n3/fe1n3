@@ -1,34 +1,23 @@
 name: Update Stats
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight
-  workflow_dispatch: # Allows manual trigger from the Actions tab
+  create:
+  push:
+  schedule: # execute every 24 hours
+    - cron: "0 0 */24 * *"
+  workflow_dispatch:
 
 jobs:
-  update-stats:
+  build:
     runs-on: ubuntu-latest
+    name: generate-github-cards
+    permissions:
+      contents: write
+      
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        
-      - name: Fetch private repo stats
+      - uses: actions/checkout@v2
+      - uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          curl -H "Authorization: token $GH_TOKEN" \
-               -H "Accept: application/vnd.github.v3+json" \
-               -s "https://api.github.com/user/repos?visibility=private" \
-               | jq '[.[] | {name: .name, stargazers_count: .stargazers_count, forks_count: .forks_count}]' \
-               > stats.json
-          echo "Updated stats.json file"
-
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add stats.json
-          git commit -m "Update stats file"
-          git push
-
-          # slay
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
